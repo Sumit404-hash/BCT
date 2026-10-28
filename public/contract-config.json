@@ -1,0 +1,8 @@
+{
+  "contractAddress": "",
+  "networkName": "Ethereum Sepolia",
+  "chainId": "0xaa36a7",
+  "chainIdDecimal": 11155111,
+  "rpcUrl": "https://ethereum-sepolia-rpc.publicnode.com",
+  "blockExplorerUrl": "https://sepolia.etherscan.io"
+}

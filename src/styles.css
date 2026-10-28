@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #17211e;
+  background: #f7f8f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --green: #237b60;
+  --green-dark: #16533f;
+  --muted: #78827d;
+  --line: #e4e9e5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button { font: inherit; }
+a { color: var(--green); }
+.page-shell { min-height: 100vh; }
+.topbar { height: 76px; padding: 0 max(calc((100vw - 1120px) / 2), 24px); display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); background:#fff; }
+.brand { display:flex; gap:11px; align-items:center; color:#1b2923; font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:700; text-decoration:none; }
+.brand small { margin-left:6px; padding:3px 6px; border-radius:4px; background:#e9f4ef; color:var(--green); font:700 9px 'DM Sans',sans-serif; letter-spacing:.08em; vertical-align:middle; }
+.brand-mark { width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:var(--green); color:#fff; font:700 18px 'Space Grotesk',sans-serif; }
+.wallet-actions { display:flex; align-items:center; gap:10px; }
+.account-pill { padding:9px 13px; border:1px solid var(--line); border-radius:8px; background:#fff; font:500 13px ui-monospace,monospace; }
+.button { min-height:42px; padding:0 16px; border:0; border-radius:8px; cursor:pointer; font-weight:700; font-size:13px; transition:background .15s,transform .15s; }
+.button:hover:not(:disabled) { transform:translateY(-1px); }
+.button:disabled { opacity:.5; cursor:not-allowed; }
+.button-dark { background:#1b2923; color:white; }
+.button-primary { background:var(--green); color:white; }
+.button-primary:hover:not(:disabled) { background:var(--green-dark); }
+.button-outline { border:1px solid #d6dfd9; background:#fff; color:#26352e; }
+main { width:min(100% - 48px, 1000px); margin:0 auto; }
+.hero { padding:76px 0 42px; max-width:790px; }
+.eyebrow { margin:0 0 14px; color:var(--green); font-size:10px; font-weight:700; letter-spacing:.14em; }
+.status-dot,.live-dot { display:inline-block; width:7px; height:7px; margin-right:6px; border-radius:50%; background:#4dba89; vertical-align:1px; }
+h1,h2,h3,p { margin-top:0; }
+h1 { margin-bottom:18px; font:700 clamp(38px,6vw,64px)/1.07 'Space Grotesk',sans-serif; letter-spacing:-.055em; }
+h1 span { color:var(--green); }
+.hero-copy { max-width:620px; color:#63706a; font-size:16px; line-height:1.75; }
+.warning { margin-top:24px; padding:15px 17px; border:1px solid #efd9aa; border-left:3px solid #d59a2c; border-radius:7px; background:#fffaf0; color:#695a3b; font-size:12px; line-height:1.65; }
+.warning strong { color:#514326; }
+.setup-card,.notice { margin:0 0 22px; padding:16px 18px; border:1px solid var(--line); border-radius:9px; background:#fff; font-size:13px; line-height:1.65; }
+.setup-card p { margin:6px 0 0; color:#68736e; }
+code { padding:2px 4px; border-radius:4px; background:#f0f3f1; font-size:.9em; }
+.notice-error { border-color:#f0c4c0; background:#fff5f4; color:#9c302a; }
+.notice-success { border-color:#b9dfcd; background:#f0faf4; color:#246d4e; overflow-wrap:anywhere; }
+.section-heading { display:flex; align-items:end; justify-content:space-between; gap:20px; margin:34px 0 17px; }
+.section-heading h2 { margin:0; font:600 26px 'Space Grotesk',sans-serif; letter-spacing:-.03em; }
+.section-heading .eyebrow { margin-bottom:7px; }
+.state-badge { padding:7px 10px; border-radius:999px; font-size:11px; font-weight:700; }
+.state-badge.open { background:#e9f6ef; color:#24754f; }
+.state-badge.closed { background:#f0f1f0; color:#6b7470; }
+.content-grid { display:grid; grid-template-columns:1.35fr .85fr; gap:18px; }
+.ballot-card,.results-card { border:1px solid var(--line); border-radius:12px; background:#fff; }
+.ballot-card { padding:9px 22px 18px; }
+.candidate { display:flex; width:100%; min-height:67px; align-items:center; gap:13px; border:0; border-bottom:1px solid #edf0ed; background:transparent; text-align:left; cursor:pointer; }
+.candidate:last-child { border-bottom:0; }
+.candidate:disabled { cursor:not-allowed; }
+.candidate.selected .candidate-name { color:var(--green-dark); }
+.radio-mark { width:20px; height:20px; display:grid; place-items:center; flex:none; border:1px solid #cdd7d1; border-radius:50%; color:#fff; font-size:12px; }
+.candidate.selected .radio-mark { border-color:var(--green); background:var(--green); }
+.candidate-name { flex:1; font-weight:700; font-size:14px; }
+.candidate-votes { color:var(--muted); font-size:11px; }
+.ballot-footer { display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding-top:16px; }
+.gas-note,.inline-status { color:var(--muted); font-size:11px; }
+.inline-status { margin:0; font-size:13px; }
+.results-card { padding:21px; }
+.results-title { display:flex; justify-content:space-between; align-items:center; }
+.results-title h3 { margin:0; font:600 19px 'Space Grotesk',sans-serif; }
+.results-title .eyebrow { margin-bottom:5px; }
+.live-dot { margin:0; box-shadow:0 0 0 4px #e6f4eb; }
+.total-votes { margin:20px 0 22px; font:700 34px 'Space Grotesk',sans-serif; }
+.total-votes span { color:var(--muted); font:500 12px 'DM Sans',sans-serif; }
+.result-row { margin:15px 0; }
+.result-label { display:flex; justify-content:space-between; margin-bottom:7px; gap:10px; font-size:12px; }
+.result-label strong { color:#48564f; }
+.progress-track { height:6px; overflow:hidden; border-radius:99px; background:#eff2ef; }
+.progress-fill { height:100%; min-width:0; border-radius:inherit; background:linear-gradient(90deg,#2c8a68,#80bb8e); transition:width .25s; }
+.close-button { margin-top:10px; width:100%; }
+.history-section { margin-top:48px; }
+.history-heading { align-items:center; margin-bottom:15px; }
+.empty { padding:30px 16px; color:var(--muted); text-align:center; font-size:13px; }
+.history-empty { border:1px dashed #dce3de; border-radius:10px; background:#fff; }
+.table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:#fff; }
+table { width:100%; border-collapse:collapse; text-align:left; white-space:nowrap; }
+th,td { padding:13px 15px; border-bottom:1px solid #edf0ed; font-size:11px; }
+th { background:#fafbfa; color:#758079; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
+td { color:#536058; }
+tbody tr:last-child td { border-bottom:0; }
+td code { color:#45544b; }
+.principles { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:45px 0 56px; }
+.principles article { padding:17px; border:1px solid var(--line); border-radius:10px; background:#fff; }
+.principles article>span { color:var(--green); font:700 11px 'Space Grotesk',sans-serif; }
+.principles h3 { margin:13px 0 7px; font:600 14px 'Space Grotesk',sans-serif; }
+.principles p { margin:0; color:var(--muted); font-size:11px; line-height:1.65; }
+footer { display:flex; justify-content:space-between; gap:12px; padding:22px max(calc((100vw - 1000px) / 2), 24px); border-top:1px solid var(--line); background:#fff; color:#7c8781; font-size:10px; }
+@media (max-width:720px) {
+  .topbar { height:66px; padding:0 18px; }
+  main { width:min(100% - 36px, 1000px); }
+  .hero { padding-top:53px; }
+  .content-grid { grid-template-columns:1fr; }
+  .principles { grid-template-columns:1fr; margin:34px 0; }
+  footer { flex-direction:column; padding:20px 18px; }
+}
+@media (max-width:430px) {
+  .brand { font-size:16px; }
+  .brand-mark { width:30px; height:30px; }
+  .wallet-actions { gap:6px; }
+  .button { padding:0 11px; font-size:11px; }
+  .account-pill { padding:8px; font-size:10px; }
+  .section-heading h2 { font-size:23px; }
+  .candidate { gap:9px; }
+}
